@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es-UY">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Captaciones Pocitos · Abate Propiedades</title>
+    <link rel="stylesheet" href="panel.css">
+    <script src="panel.js" defer></script>
+  </head>
+  <body>
+    <header class="brandbar">
+      <div class="brand"><span class="brandmark" aria-hidden="true">A</span><div><strong>Abate Propiedades</strong><span>Captaciones</span></div></div>
+      <span class="area-badge">Pocitos · Montevideo</span>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Dueño vende</p>
+        <h1 id="page-title">Tu próxima visita empieza acá.</h1>
+        <p>Revisá avisos de Pocitos desde tu sesión de Mercado Libre y organizá una base para evaluar las oportunidades.</p>
+      </section>
+
+      <section class="card setup-card" aria-labelledby="setup-title">
+        <div class="section-heading"><div><h2 id="setup-title">Preparar la búsqueda</h2><p>Abrí Mercado Libre con tu sesión iniciada y elegí la pestaña que querés revisar.</p></div><button id="open-search" class="button secondary" type="button">Abrir búsqueda de Pocitos <span aria-hidden="true">↗</span></button></div>
+        <form id="start-form">
+          <div class="source-field"><label for="source-tab">Pestaña de Mercado Libre</label><div class="source-row"><select id="source-tab" required aria-describedby="source-help"><option value="">Buscando pestañas abiertas…</option></select><button id="refresh-tabs" type="button" class="button secondary">Actualizar</button></div><p id="source-help" class="field-help">Podés empezar desde una búsqueda o un aviso. El asistente abrirá su propia pestaña para revisarlos.</p></div>
+          <div class="limits-row"><div class="field"><label for="max-listings">Máximo de avisos en esta prueba</label><input id="max-listings" type="number" min="1" max="500" step="1" value="25" required><span class="field-help">Entre 1 y 500 avisos.</span></div><div class="field"><label for="max-pages">Máximo de páginas de búsqueda</label><input id="max-pages" type="number" min="1" max="50" step="1" value="10" required><span class="field-help">Entre 1 y 50 páginas.</span></div></div>
+          <label class="checkbox-row" for="reveal-phone"><input id="reveal-phone" type="checkbox" checked><span><strong>Mostrar el teléfono cuando el aviso ofrezca ese botón</strong><span class="field-help">Puede abrir “Ver teléfono”. No completa formularios ni envía consultas; los contactos que no pueda leer quedan pendientes.</span></span></label>
+          <div class="actions"><button id="start" class="button primary" type="submit">Empezar revisión</button><button id="pause" class="button secondary" type="button" disabled>Pausar</button><button id="resume" class="button secondary" type="button" disabled>Continuar</button></div>
+        </form>
+        <p class="notice">Lee los datos que tu sesión permita ver normalmente. Se detiene ante un inicio de sesión, una verificación o un acceso denegado. La ubicación y la condición de dueño directo requieren revisión.</p>
+      </section>
+
+      <section class="card progress-card" aria-labelledby="progress-title">
+        <div class="status-heading"><h2 id="progress-title">Estado de la revisión</h2><span id="phase-badge" class="status-badge">En espera</span></div>
+        <p id="status-message" class="status-message" role="status" aria-live="polite">Elegí una pestaña para empezar.</p>
+        <p id="action-error" class="error-message" role="alert" hidden></p>
+        <div class="counters"><div><strong id="pages-count">0</strong><span>Páginas revisadas</span></div><div><strong id="reviewed-count">0</strong><span>Avisos revisados</span></div><div><strong id="phones-count">0</strong><span>Con teléfono</span></div><div><strong id="candidates-count">0</strong><span>Con datos para revisar</span></div></div>
+      </section>
+
+      <section class="card results-card" aria-labelledby="results-title">
+        <div class="section-heading"><div><h2 id="results-title">Base de propiedades</h2><p id="results-description">Los avisos excluidos también quedan registrados para evitar repetirlos.</p></div><div class="actions compact"><button id="export-csv" class="button primary" type="button" disabled>Descargar CSV</button><button id="clear-data" class="button quiet" type="button" disabled>Borrar datos</button></div></div>
+        <div class="table-wrap"><table aria-describedby="results-description"><caption class="sr-only">Avisos de Mercado Libre revisados para la campaña de Pocitos.</caption><thead><tr><th scope="col">Propiedad</th><th scope="col">Ubicación</th><th scope="col">Teléfono</th><th scope="col">Revisión</th><th scope="col"><span class="sr-only">Enlace al aviso</span></th></tr></thead><tbody id="results-body"></tbody></table><div id="empty-state" class="empty-state"><span aria-hidden="true">⌕</span><h3>La base todavía está vacía</h3><p>Cuando empiece la revisión, vas a ver los avisos y la información encontrada.</p></div></div>
+        <p class="field-help results-footnote">Los datos quedan guardados en este navegador. Para empezar una base nueva, descargá la actual y luego borrá los datos.</p>
+      </section>
+
+      <details class="card message-card"><summary>Mensaje propuesto para revisar</summary><p class="field-help">Es un borrador. Esta herramienta no envía mensajes ni habilita una campaña de WhatsApp. La autorización comercial se registra como “No consta”.</p><blockquote id="message-draft">Hola, ¿cómo estás? Te escribimos de Abate Propiedades por tu aviso de venta en Mercado Libre. Nuestra propuesta incluye fotos y video profesionales, publicaciones destacadas en portales y publicidad en redes, junto con una tasación para definir la estrategia de venta. ¿Te parece coordinar una visita para conocer la propiedad y contarte cómo podemos ayudarte a comercializarla?</blockquote><button id="copy-message" class="button secondary" type="button">Copiar borrador</button><span id="copy-status" class="field-help" role="status" aria-live="polite"></span></details>
+    </main>
+    <footer>Abate Propiedades · Campaña de captación en Pocitos. La búsqueda tiene los límites que elijas y no garantiza encontrar todos los avisos.</footer>
+  </body>
+</html>

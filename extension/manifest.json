@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Abate · Captaciones Pocitos",
+  "version": "0.1.0",
+  "description": "Organiza avisos de dueño vende en Pocitos desde tu navegador y exporta una planilla para revisión.",
+  "minimum_chrome_version": "114",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://*.mercadolibre.com.uy/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Abate · Captaciones Pocitos"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
